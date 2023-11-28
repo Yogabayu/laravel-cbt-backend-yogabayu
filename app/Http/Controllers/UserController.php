@@ -33,13 +33,13 @@ class UserController extends Controller
     {
         $data = $request->all();
         $data['password'] = Hash::make($request->password);
-        User::create($data);
+        \App\Models\User::create($data);
         return redirect()->route('user.index')->with('success', 'User successfully created');
     }
 
     public function edit($id)
     {
-        $user = User::findOrFail($id);
+        $user = \App\Models\User::findOrFail($id);
         return view('pages.users.edit', compact('user'));
     }
 

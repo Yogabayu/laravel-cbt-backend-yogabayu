@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
         \App\Models\User::factory(10)->create();
 
         \App\Models\User::create([
-            'name' => 'Yoga Dev.',
+            'name' => 'Admin yoga',
             'email' => 'yoga@yogabayuap.com',
             'password' => Hash::make('12345678'),
             'roles' => 'ADMIN',

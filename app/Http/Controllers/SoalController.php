@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreSoalRequest;
-use App\Models\Soal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -29,7 +28,7 @@ class SoalController extends Controller
     public function store(StoreSoalRequest $request)
     {
         $data = $request->all();
-        Soal::create($data);
+        \App\Models\Soal::create($data);
         return redirect()->route('soal.index')->with('success', 'Soal successfully created');
     }
 }
